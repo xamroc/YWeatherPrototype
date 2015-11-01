@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "ECSlidingViewController.h"
+#import "MenuViewController.h"
+#import "ScrollViewController.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +19,21 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main"
+                                                             bundle: nil];
+    
+    // Variable names based on ECSlidingViewController examples
+    ScrollViewController *topViewController = [mainStoryboard instantiateViewControllerWithIdentifier:@"Scroll"];
+    MenuViewController *underLeftViewController = (MenuViewController *)[mainStoryboard instantiateViewControllerWithIdentifier:@"Menu"];
+    
+    ECSlidingViewController *slidingViewController = [[ECSlidingViewController alloc] initWithTopViewController:topViewController];
+    slidingViewController.underLeftViewController = underLeftViewController;
+    
+    [slidingViewController.view addGestureRecognizer:slidingViewController.panGesture];
+    self.window.rootViewController = slidingViewController;
+    
     return YES;
 }
 
