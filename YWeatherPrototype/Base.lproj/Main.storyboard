@@ -15,8 +15,22 @@
                     <view key="view" contentMode="scaleToFill" id="aEJ-of-bUM">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2f1-fr-re0">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2f1-fr-re0" firstAttribute="top" secondItem="aEJ-of-bUM" secondAttribute="top" id="22X-Tq-lOZ"/>
+                            <constraint firstAttribute="trailing" secondItem="2f1-fr-re0" secondAttribute="trailing" id="Hux-kk-m5A"/>
+                            <constraint firstItem="2f1-fr-re0" firstAttribute="leading" secondItem="aEJ-of-bUM" secondAttribute="leading" id="V2w-X6-rU5"/>
+                            <constraint firstItem="KO1-B9-MGd" firstAttribute="top" secondItem="2f1-fr-re0" secondAttribute="bottom" id="d6y-mJ-PBR"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="pagedScrollView" destination="2f1-fr-re0" id="5G3-kD-v8z"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lYd-0m-j82" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

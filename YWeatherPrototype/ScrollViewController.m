@@ -9,14 +9,17 @@
 #import "ScrollViewController.h"
 
 @interface ScrollViewController ()
-
+@property (weak, nonatomic) IBOutlet UIScrollView *pagedScrollView;
 @end
 
 @implementation ScrollViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor redColor];
+    self.pagedScrollView.contentSize = CGSizeMake(self.view.frame.size.width * 2, self.view.frame.size.height);
+    self.pagedScrollView.scrollEnabled = YES;
+    self.pagedScrollView.bounces = NO;
+    self.pagedScrollView.backgroundColor = [UIColor redColor];
 }
 
 - (void)didReceiveMemoryWarning {
