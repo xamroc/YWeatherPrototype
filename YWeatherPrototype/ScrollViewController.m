@@ -17,9 +17,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.pagedScrollView.contentSize = CGSizeMake(self.view.frame.size.width * 2, self.view.frame.size.height);
-    self.pagedScrollView.scrollEnabled = YES;
+    self.pagedScrollView.pagingEnabled = YES;
     self.pagedScrollView.bounces = NO;
-    self.pagedScrollView.backgroundColor = [UIColor redColor];
 }
 
 - (void)didReceiveMemoryWarning {

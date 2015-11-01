@@ -7,6 +7,7 @@
 //
 
 #import "MenuViewController.h"
+#import "UIViewController+ECSlidingViewController.h"
 
 @interface MenuViewController ()
 
@@ -16,7 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor blueColor];
+    [self.slidingViewController setAnchorRightPeekAmount:40.0f];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -35,6 +36,23 @@
 #warning Incomplete implementation, return the number of rows
     return 0;
 }
+
+-(void)revealMenu {
+    printf("Menu is here.");
+}
+
+//- (void)revealMenu:(UILongPressGestureRecognizer *)longPressRecognizer {
+//    if (longPressRecognizer.state == UIGestureRecognizerStateBegan) {
+//        [self.slidingViewController anchorTopViewToRightAnimated:YES];
+//    } else {
+//        if (longPressRecognizer.state == UIGestureRecognizerStateCancelled
+//            || longPressRecognizer.state == UIGestureRecognizerStateFailed
+//            || longPressRecognizer.state == UIGestureRecognizerStateEnded)
+//        {
+//            [self.slidingViewController resetTopViewAnimated:YES];
+//        }
+//    }
+//}
 
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

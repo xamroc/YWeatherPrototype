@@ -34,6 +34,9 @@
     [slidingViewController.view addGestureRecognizer:slidingViewController.panGesture];
     self.window.rootViewController = slidingViewController;
     
+    UILongPressGestureRecognizer *revealMenuRecognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:slidingViewController.underLeftViewController action:@selector(revealMenu)];
+    [topViewController.view addGestureRecognizer:revealMenuRecognizer];
+    
     return YES;
 }
 
